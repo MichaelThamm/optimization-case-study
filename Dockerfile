@@ -4,4 +4,4 @@ FROM python:3
 COPY . /app
 WORKDIR /app
 # Start the application
-CMD python3 Source/main.py
+CMD python3 OptimizationCfg.py
