@@ -17,9 +17,8 @@ https://platypus.readthedocs.io/en/latest/getting-started.html
 https://www.indusmic.com/post/schwefel-function
 '''
 
-PROJECT_PATH = Path(__file__).resolve().parent.parent
-FOLDER_PATH = os.path.join(PROJECT_PATH, 'Optimization-CaseStudy')
-LOGGER_FILE = os.path.join(FOLDER_PATH, 'Solvers.log')
+PROJECT_PATH = Path(__file__).resolve().parent
+LOGGER_FILE = os.path.join(PROJECT_PATH, 'Solvers.log')
 
 LOGGER = logging.getLogger("Platypus")
 LOGGER.setLevel(logging.INFO)
@@ -351,7 +350,7 @@ def plottingSchwefel(x1, x2, lower, upper, run=False):
     plt.show()
 
     plt.contour(x1, x2, space, 15, colors='grey')
-    plt.imshow(space, extent=[lower, upper, lower, upper], origin='lower', cmap=cm.get_cmap('jet'), alpha=0.5)
+    plt.imshow(space, extent=[lower, upper, lower, upper], origin='lower', cmap=cm.get_cmap('jet'), alpha=0.5, aspect="auto")
     plt.plot(SCHWEFEL_SOLUTION[0], SCHWEFEL_SOLUTION[1], marker='+', color='red', markersize=12)
     plt.colorbar()
     plt.xlabel('x1')

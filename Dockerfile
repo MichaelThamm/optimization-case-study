@@ -1,7 +1,10 @@
 # Find an image from Docker website
-FROM python:3
-# Copy application or program files from image to the target creating a dir called app
-COPY . /app
-WORKDIR /app
-# Start the application
-CMD python3 OptimizationCfg.py
+FROM python:3.6
+
+COPY . /Optimization-CaseStudy
+
+WORKDIR /Optimization-CaseStudy
+
+RUN pip install -r requirements.txt
+
+CMD ["python", "OptimizationCfg.py"]
